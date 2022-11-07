@@ -1,0 +1,12 @@
+schema {
+  query: Queries
+}
+
+type Queries{
+  employees: [Employee]
+}
+
+type Employee{
+   name: String!
+   yearsOfService: Int
+}

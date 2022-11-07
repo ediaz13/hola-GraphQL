@@ -1,0 +1,38 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.4.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+	compile 'com.graphql-java:graphql-spring-boot-starter:5.0.2'
+
+	// to embed GraphiQL tool
+	compile 'com.graphql-java:graphiql-spring-boot-starter:5.0.2'
+
+	// to embed Voyager tool
+	compile 'com.graphql-java:voyager-spring-boot-starter:5.0.2'
+}
